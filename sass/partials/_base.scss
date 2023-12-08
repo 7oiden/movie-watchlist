@@ -13,8 +13,6 @@ body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   margin: 0;
   background-color: getColor(background);
   color: getColor(text);
@@ -25,7 +23,7 @@ body {
 a {
   display: block;
   text-decoration: none;
-  color: getColor(text);
+  color: #e74c3c;
   outline: none;
 }
 
@@ -54,20 +52,19 @@ header {
   background-image: url(../images/movie-watchlist.jpg);
   background-size: cover;
   background-position: center top;
-  height: 300px;
+  height: 25vh;
   position: relative;
 }
 
-footer {
-  flex-shrink: 0;
-  background-color: black;
-  color: #a5a5a5;
-  text-align: center;
-  margin-top: 4rem;
-  padding: 1.5rem;
-}
+// footer {
+//   flex-shrink: 0;
+//   background-color: black;
+//   color: #a5a5a5;
+//   text-align: center;
+//   padding: 1.5rem;
+// }
 
-.loader-container {
+.spinner-container {
   position: absolute;
   margin-top: 2rem;
   left: 50%;
@@ -77,21 +74,13 @@ footer {
 }
 
 .spinner {
-  border: 0.2rem solid white;
+  border: 0.2rem solid #787878;
   border-top: 0.25rem solid transparent;
   margin: 0 auto;
   border-radius: 50%;
   width: 2.5rem;
   height: 2.5rem;
   animation: spin 1s ease-in-out infinite;
-}
-
-.hide-spinner {
-  display: none;
-}
-
-.show-spinner {
-  display: block;
 }
 
 @keyframes spin {
@@ -101,4 +90,20 @@ footer {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.alert {
+  margin: 0.5rem 0;
+  padding: 1rem 1.5rem;
+  color: black;
+  border: 1px solid getColor(border);
+  border-radius: 3px;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.error {
+  background-color: getColor(errorBg);
+  color: getColor(errorText);
+  border-color: getColor(errorBorder);
 }

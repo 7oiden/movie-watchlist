@@ -21,6 +21,11 @@ export function fetchMovieData(movieIdArray) {
         }
       } catch (error) {
         console.error(error);
+        displayAlert(
+          "error",
+          "An error has occurred when trying to fetch the API",
+          ".movies__wrapper"
+        );
       }
     }
     fetchData();

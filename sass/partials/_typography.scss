@@ -1,17 +1,31 @@
 h1 {
-    font-size: 3.5rem;
-    font-weight: 800;
-    padding: 0;
-    margin: 0;
+  font-size: 3.5rem;
+  font-weight: 800;
+  padding: 0;
+  margin: 0;
 }
 
 h2 {
-    font-size: 1.5rem;
-    padding: 0;
-    margin: 0;
-    font-weight: 500;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
 }
 
 a {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.search__msg {
+  color: #2e2e2f;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.default-msg {
+  color: #2e2e2f;
+}
+
+.failed-msg {
+  color: #787878;
 }

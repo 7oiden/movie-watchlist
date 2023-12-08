@@ -1,16 +1,15 @@
-const moviesContainer = document.querySelector(".movies__grid");
+const moviesContainer = document.querySelector(".movies__wrapper");
 const spinner = document.querySelector(".spinner");
 
 export function renderMovies(movies) {
   moviesContainer.innerHTML = "";
-  spinner.classList.add("hide-spinner");
 
   movies.forEach((movie) => {
     moviesContainer.innerHTML += `
         <div class="movie__container">
-        <div class="movie__poster">
-            <img src="${movie.Poster}" alt="${movie.Title}">
-        </div>
+            <div class="movie__poster">
+                <img src="${movie.Poster}" alt="${movie.Title}">
+             </div>
             <div class="movie__card">
                 <div class="movie__header">
                     <h2>${movie.Title} (${movie.Year})</h2>
