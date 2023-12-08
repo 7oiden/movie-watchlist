@@ -36,7 +36,7 @@ p {
 
 hr {
   width: 100%;
-  color: #2C2C2C;
+  color: #2c2c2c;
 }
 
 img {
@@ -51,15 +51,20 @@ img {
 }
 
 header {
-  background-image: url(../images/andre-tan-THJJRUhNlEc-unsplash.jpg);
+  background-image: url(../images/movie-watchlist.jpg);
   background-size: cover;
-  background-position: center center;
-  height: 250px;
+  background-position: center top;
+  height: 300px;
   position: relative;
 }
 
 footer {
   flex-shrink: 0;
+  background-color: black;
+  color: #a5a5a5;
+  text-align: center;
+  margin-top: 4rem;
+  padding: 1.5rem;
 }
 
 .loader-container {
