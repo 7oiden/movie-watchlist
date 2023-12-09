@@ -6,7 +6,6 @@ import { displaySpinner } from "./components/displaySpinner.js";
 
 const searchInput = document.querySelector(".search__input");
 const searchForm = document.querySelector(".search__form");
-const spinner = document.querySelector(".spinner");
 
 displaySearchMsg(
   "show-icon",
@@ -31,11 +30,11 @@ function submitSearch(event) {
       const result = await response.json();
 
       movieIdArray = [];
-
       displaySpinner(".movies__wrapper");
       const movies = result.Search;
 
       if (movies) {
+        // searchForm.reset();
         movies.forEach((movie) => {
           movieIdArray.push(movie.imdbID);
         });

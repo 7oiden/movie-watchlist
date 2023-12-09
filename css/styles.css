@@ -181,6 +181,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 }
 .movie__plot {
   color: #a5a5a5;
