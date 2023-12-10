@@ -16,7 +16,7 @@ export function handleFav() {
     iconElement.classList.toggle("fa-minus-circle");
     iconElement.classList.toggle("fa-plus-circle");
 
-    textElement.innerText = textElement.innerText === "Watchlist" ? "Remove from watchlist" : "Watchlist";
+    textElement.innerText = textElement.innerText === "Watchlist" ? "Remove" : "Watchlist";
 
     const id = this.dataset.id;
     const poster = this.dataset.poster;

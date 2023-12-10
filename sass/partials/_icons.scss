@@ -3,7 +3,7 @@
   top: 50%;
   left: 1rem;
   transform: translateY(-50%);
-  color: #a5a5a5;
+  color: getColor(medium-light-text);
   font-size: 1.5rem;
 }
 
@@ -13,12 +13,12 @@
 }
 
 .fa-plus-circle {
-  color: white;
+  color: getColor(light-text);
   font-size: 1rem;
 }
 
 .fa-film {
-  font-size: 4rem;
+  font-size: 5rem;
   color: #2e2e2f;
 }
 
@@ -28,4 +28,8 @@
 
 .hide-icon {
   display: none;
+}
+
+.plus-large {
+  font-size: 1.5rem;
 }

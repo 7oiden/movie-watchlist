@@ -1,33 +1,76 @@
 import { baseUrl } from "../settings/api.js";
 import { renderMovies } from "../ui/renderMovies.js";
+import { displayAlert } from "../components/displayAlert.js";
+import { displaySearchMsg } from "../components/displaySearchMsg.js";
 
-export function fetchMovieData(movieIdArray) {
-  let idQuery = "";
-  let movieArray = [];
+export async function fetchMovieData(movieIdArray, searchValue) {
+  try {
+    const fetchPromises = movieIdArray.map(async (movieId) => {
+      const idQuery = `i=${movieId}&type=movie&plot=short`;
+      const response = await fetch(baseUrl + idQuery);
+      const result = await response.json();
+      return result;
+    });
 
-  movieIdArray.forEach((movieId) => {
-    idQuery = `i=${movieId}&type=movie&plot=short`;
-    async function fetchData() {
-      try {
-        const response = await fetch(baseUrl + idQuery);
-        const result = await response.json();
-        
-        movieArray.push(result);
+    const movieArray = await Promise.all(fetchPromises);
 
-        console.log(movieArray);
+    console.log(movieArray);
+    renderMovies(movieArray);
 
-        if (movieArray.length === movieIdArray.length) {
-          renderMovies(movieArray);
-        }
-      } catch (error) {
-        console.error(error);
-        displayAlert(
-          "error",
-          "An error has occurred when trying to fetch the API",
-          ".movies__wrapper"
-        );
-      }
+    if (searchValue === "") {
+      displaySearchMsg(
+        "hide-icon",
+        "failed-msg",
+        "Please enter a movie title in the search field",
+        ".movies__wrapper"
+      );
+    } else if (movieArray.length === 0) {
+      displaySearchMsg(
+        "hide-icon",
+        "failed-msg",
+        "Unable to find what you're looking for. Please try another search",
+        ".movies__wrapper"
+      );
     }
-    fetchData();
-  });
+  } catch (error) {
+    console.error(error);
+    displayAlert(
+      "error",
+      "An error has occurred when trying to fetch the API",
+      ".movies__wrapper"
+    );
+  }
 }
+
+// import { baseUrl } from "../settings/api.js";
+// import { renderMovies } from "../ui/renderMovies.js";
+
+// export function fetchMovieData(movieIdArray) {
+
+//   let idQuery = "";
+//   let movieArray = [];
+
+//   movieIdArray.forEach((movieId) => {
+//     idQuery = `i=${movieId}&type=movie&plot=short`;
+//     (async function fetchData() {
+//       try {
+//         const response = await fetch(baseUrl + idQuery);
+//         const result = await response.json();
+
+//         movieArray.push(result);
+
+//       } catch (error) {
+//         console.error(error);
+//         displayAlert(
+//           "error",
+//           "An error has occurred when trying to fetch the API",
+//           ".movies__wrapper"
+//         );
+//       }
+
+//       movieArray = [...movieArray];
+//       console.log(movieArray);
+//       renderMovies(movieArray);
+//     })();
+//   });
+// }

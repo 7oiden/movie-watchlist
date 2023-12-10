@@ -17,15 +17,20 @@ a {
 }
 
 .search__msg {
-  color: #2e2e2f;
-  font-size: 1.5rem;
+  color: getColor(dark-text);
+  font-size: 1.75rem;
   font-weight: 700;
 }
 
 .default-msg {
-  color: #2e2e2f;
+  color: getColor(dark-text);
 }
 
 .failed-msg {
-  color: #787878;
+  color: getColor(medium-dark-text);
+}
+
+#year-text {
+  font-size: 1rem;
+  color: getColor(medium-light-text);
 }

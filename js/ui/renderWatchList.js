@@ -1,17 +1,15 @@
 import { getExistingFavs, saveFavs } from "../utils/storage.js";
-import { displaySearchMsg } from "../components/displaySearchMsg.js";
 
 let currentWatchList = getExistingFavs();
 const moviesContainer = document.querySelector(".movies__wrapper");
 
 export function renderWatchList() {
   if (currentWatchList.length === 0) {
-    displaySearchMsg(
-      "hide-icon",
-      "failed-msg",
-      "Your watchlist is looking a little empty...",
-      ".movies__wrapper"
-    );
+    moviesContainer.innerHTML = `
+    <div class="search__msg-container">
+    <p class="search__msg failed-msg">Your watchlist is looking a little empty...</p>
+    <a href="index.html" class="watchlist-link"><i class="fas fa-plus-circle plus-large"></i>Let us add some movies</a>
+    </div>`;
   }
 
   currentWatchList.forEach((movie) => {
@@ -22,7 +20,7 @@ export function renderWatchList() {
              </div>
             <div class="movie__card">
                 <div class="movie__header">
-                    <h2>${movie.title} (${movie.year})</h2>
+                    <h2>${movie.title} <span id="year-text">(${movie.year})</span></h2>
                     <div class="movie__rating">
                     <i class="fas fa-star"></i>
                     <p>${movie.rating}</p>

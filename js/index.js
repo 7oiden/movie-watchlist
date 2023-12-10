@@ -34,25 +34,11 @@ function submitSearch(event) {
       const movies = result.Search;
 
       if (movies) {
-        // searchForm.reset();
+        searchForm.reset();
         movies.forEach((movie) => {
           movieIdArray.push(movie.imdbID);
         });
-      } else if (searchValue === "") {
-        displaySearchMsg(
-          "hide-icon",
-          "failed-msg",
-          "Please enter a search query",
-          ".movies__wrapper"
-        );
-      } else {
-        displaySearchMsg(
-          "hide-icon",
-          "failed-msg",
-          "Unable to find what you're looking for. Please try another search",
-          ".movies__wrapper"
-        );
-      }
+      } 
     } catch (error) {
       console.error(error);
       displayAlert(
@@ -61,7 +47,8 @@ function submitSearch(event) {
         ".movies__wrapper"
       );
     }
-    fetchMovieData(movieIdArray);
+    
+    fetchMovieData(movieIdArray, searchValue);
   })();
 }
 

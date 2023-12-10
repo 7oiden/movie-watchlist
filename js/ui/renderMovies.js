@@ -11,6 +11,12 @@ export function renderMovies(movies) {
     let favIconClass = "fa-plus-circle";
     let favText = "Watchlist";
 
+    let moviePoster = movie.Poster;
+
+    if (moviePoster === "N/A" || moviePoster === "undefined") {
+      moviePoster = "https://picsum.photos/id/220/300/200";
+    }
+
     const objectAlreadyFav = favorites.find((fav) => {
         console.log(typeof(fav.id));
       return fav.id === movie.imdbID;
@@ -18,17 +24,17 @@ export function renderMovies(movies) {
 
     if (objectAlreadyFav) {
       favIconClass = "fa-minus-circle";
-      favText = "Remove from watchlist";
+      favText = "Remove";
     }
 
     moviesContainer.innerHTML += `
         <div class="movie__container">
             <div class="movie__poster">
-                <img src="${movie.Poster}" alt="${movie.Title}">
+                <img src="${moviePoster}" alt="${movie.Title}">
              </div>
             <div class="movie__card">
                 <div class="movie__header">
-                    <h2>${movie.Title} (${movie.Year})</h2>
+                    <h2>${movie.Title} <span id="year-text">(${movie.Year})</span></h2>
                     <div class="movie__rating">
                     <i class="fas fa-star"></i>
                     <p>${movie.imdbRating}</p>
