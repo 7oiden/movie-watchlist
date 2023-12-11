@@ -1,7 +1,7 @@
 $primary-typeface: "inter", sans-serif;
 
 $colors: (
-  cta: #F56469,
+  cta: #db474c,
   background: #121212,
   light-text: #fff,
   medium-light-text: #a5a5a5,
@@ -14,4 +14,30 @@ $colors: (
 
 @function getColor($color) {
   @return map-get($colors, $color);
+}
+
+$breakpoints: (
+  small: 576px,
+  medium: 768px,
+  large: 992px,
+  xLarge: 1200px,
+  xxLarge: 1400px,
+  xxxLarge: 1600px,
+);
+
+@function getBreakpoint($breakpoint) {
+  @return map-get($breakpoints, $breakpoint);
+}
+
+$widths: (
+  small: 90%,
+  medium: 85%,
+  large: 75%,
+  xLarge: 65%,
+  xxLarge: 55%,
+  xxxLarge: 45%,
+);
+
+@function getWidth($width) {
+  @return map-get($widths, $width);
 }

@@ -39,6 +39,7 @@ hr {
 }
 
 img {
+  width: 100%;
   margin: 0;
   padding: 0;
   display: block;
@@ -110,22 +111,27 @@ nav {
 }
 @media (min-width: 768px) {
   nav {
-    width: 80%;
+    width: 85%;
   }
 }
 @media (min-width: 992px) {
   nav {
-    width: 70%;
+    width: 75%;
   }
 }
 @media (min-width: 1200px) {
   nav {
-    width: 60%;
+    width: 65%;
   }
 }
 @media (min-width: 1400px) {
   nav {
-    width: 50%;
+    width: 55%;
+  }
+}
+@media (min-width: 1600px) {
+  nav {
+    width: 45%;
   }
 }
 
@@ -139,22 +145,27 @@ nav {
 }
 @media (min-width: 768px) {
   .search__form {
-    width: 80%;
+    width: 85%;
   }
 }
 @media (min-width: 992px) {
   .search__form {
-    width: 70%;
+    width: 75%;
   }
 }
 @media (min-width: 1200px) {
   .search__form {
-    width: 60%;
+    width: 65%;
   }
 }
 @media (min-width: 1400px) {
   .search__form {
-    width: 50%;
+    width: 55%;
+  }
+}
+@media (min-width: 1600px) {
+  .search__form {
+    width: 45%;
   }
 }
 .search__input {
@@ -169,7 +180,7 @@ nav {
 }
 .search__button {
   border: none;
-  background-color: #F56469;
+  background-color: #db474c;
   color: white;
   cursor: pointer;
   padding: 0.75rem 2.5rem;
@@ -192,22 +203,27 @@ nav {
 }
 @media (min-width: 768px) {
   .movies__wrapper {
-    width: 80%;
+    width: 85%;
   }
 }
 @media (min-width: 992px) {
   .movies__wrapper {
-    width: 70%;
+    width: 75%;
   }
 }
 @media (min-width: 1200px) {
   .movies__wrapper {
-    width: 60%;
+    width: 65%;
   }
 }
 @media (min-width: 1400px) {
   .movies__wrapper {
-    width: 50%;
+    width: 55%;
+  }
+}
+@media (min-width: 1600px) {
+  .movies__wrapper {
+    width: 45%;
   }
 }
 

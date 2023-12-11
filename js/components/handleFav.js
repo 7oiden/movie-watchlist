@@ -33,8 +33,7 @@ export function handleFav() {
       return fav.id === id;
     });
 
-    console.log(currentFavs);
-    console.log(title);
+    // console.log(currentFavs);
 
     if (!movieExists) {
       const movie = {
@@ -48,7 +47,7 @@ export function handleFav() {
         plot: plot,
       };
 
-      console.log(movie);
+      // console.log(movie);
 
       currentFavs.push(movie);
       saveFavs(currentFavs);

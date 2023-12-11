@@ -14,11 +14,11 @@ export function renderMovies(movies) {
     let moviePoster = movie.Poster;
 
     if (moviePoster === "N/A" || moviePoster === "undefined") {
-      moviePoster = "https://picsum.photos/id/220/300/200";
+      moviePoster =
+        "https://res.cloudinary.com/dhd2paq70/image/upload/v1702282517/movie-placeholder_rnnyvb.jpg";
     }
 
     const objectAlreadyFav = favorites.find((fav) => {
-        console.log(typeof(fav.id));
       return fav.id === movie.imdbID;
     });
 
@@ -45,7 +45,7 @@ export function renderMovies(movies) {
                     <p>${movie.Genre}</p>
                     <div class="movie__watchlist"  
                     data-id="${movie.imdbID}"
-                    data-poster="${movie.Poster}"
+                    data-poster="${moviePoster}"
                     data-title="${movie.Title}"
                     data-year="${movie.Year}"
                     data-rating="${movie.imdbRating}"

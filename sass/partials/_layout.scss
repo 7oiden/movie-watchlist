@@ -6,20 +6,24 @@ nav {
   height: 100%;
   margin: 0 auto;
 
-  @media (min-width: 768px) {
-    width: 80%;
+  @media (min-width: getBreakpoint(medium)) {
+    width: getWidth(medium);
   }
 
-  @media (min-width: 992px) {
-    width: 70%;
+  @media (min-width: getBreakpoint(large)) {
+    width: getWidth(large);
   }
 
-  @media (min-width: 1200px) {
-    width: 60%;
+  @media (min-width: getBreakpoint(xLarge)) {
+    width: getWidth(xLarge);
   }
 
-  @media (min-width: 1400px) {
-    width: 50%;
+  @media (min-width: getBreakpoint(xxLarge)) {
+    width: getWidth(xxLarge);
+  }
+
+  @media (min-width: getBreakpoint(xxxLarge)) {
+    width: getWidth(xxxLarge);
   }
 }
 
@@ -32,21 +36,25 @@ nav {
     display: flex;
     font-size: 2rem;
 
-    @media (min-width: 768px) {
-    width: 80%;
-  }
-
-    @media (min-width: 992px) {
-      width: 70%;
+    @media (min-width: getBreakpoint(medium)) {
+      width: getWidth(medium);
     }
 
-    @media (min-width: 1200px) {
-      width: 60%;
+    @media (min-width: getBreakpoint(large)) {
+      width: getWidth(large);
     }
 
-    @media (min-width: 1400px) {
-    width: 50%;
-  }
+    @media (min-width: getBreakpoint(xLarge)) {
+      width: getWidth(xLarge);
+    }
+
+    @media (min-width: getBreakpoint(xxLarge)) {
+      width: getWidth(xxLarge);
+    }
+
+    @media (min-width: getBreakpoint(xxxLarge)) {
+      width: getWidth(xxxLarge);
+    }
   }
 
   &__input {
@@ -84,20 +92,24 @@ nav {
   justify-content: center;
   align-items: center;
 
-  @media (min-width: 768px) {
-    width: 80%;
+  @media (min-width: getBreakpoint(medium)) {
+    width: getWidth(medium);
   }
 
-  @media (min-width: 992px) {
-    width: 70%;
+  @media (min-width: getBreakpoint(large)) {
+    width: getWidth(large);
   }
 
-  @media (min-width: 1200px) {
-    width: 60%;
+  @media (min-width: getBreakpoint(xLarge)) {
+    width: getWidth(xLarge);
   }
 
-  @media (min-width: 1400px) {
-    width: 50%;
+  @media (min-width: getBreakpoint(xxLarge)) {
+    width: getWidth(xxLarge);
+  }
+
+  @media (min-width: getBreakpoint(xxxLarge)) {
+    width: getWidth(xxxLarge);
   }
 }
 
