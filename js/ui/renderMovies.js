@@ -61,7 +61,7 @@ export function renderMovies(movies) {
                 </div>
             </div>
         </div>
-        <hr />
+        <hr>
       `;
   });
   handleFav();

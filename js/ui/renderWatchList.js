@@ -39,7 +39,7 @@ export function renderWatchList() {
                 </div>
             </div>
         </div>
-        <hr />
+        <hr>
     `;
   });
 
