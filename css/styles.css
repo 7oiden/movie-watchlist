@@ -87,7 +87,7 @@ header {
 }
 .alert {
   margin: 0.5rem 0;
-  padding: 1rem 1.5rem;
+  padding: 1.5rem;
   color: black;
   border: 1px solid;
   border-radius: 3px;
@@ -300,7 +300,7 @@ a {
 
 .search__msg {
   color: #2c2c2c;
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
