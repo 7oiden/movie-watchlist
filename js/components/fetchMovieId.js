@@ -24,13 +24,13 @@ export async function fetchMovieId(searchValue, pageNum) {
     }
 
     const result = await response.json();
+    const movies = result.Search;
 
     let movieIdArray = [];
 
     displaySpinner(".movies__wrapper");
     btnContainer.classList.remove("page-btn-show");
-    const movies = result.Search;
-
+    
     searchForm.reset();
 
     // console.log(movies);
@@ -40,7 +40,6 @@ export async function fetchMovieId(searchValue, pageNum) {
         movieIdArray.push(movie.imdbID);
       });
     }
-
 
     fetchMovieData(movies, movieIdArray);
   } catch (error) {

@@ -5,6 +5,7 @@ import { handleSearchError } from "./handleSearchError.js";
 
 const btnContainer = document.querySelector(".btn-wrapper");
 const nextBtn = document.querySelector(".next-btn");
+const prevBtn = document.querySelector(".prev-btn");
 
 export async function fetchMovieData(movies, movieIdArray) {
   try {
@@ -21,14 +22,6 @@ export async function fetchMovieData(movies, movieIdArray) {
     renderMovies(movieArray);
 
     btnContainer.classList.add("page-btn-show");
-
-    if (movieArray.length < 10) {
-      nextBtn.classList.add("hide-btn");
-      nextBtn.classList.remove("show-btn");
-    } else {
-      nextBtn.classList.add("show-btn");
-      nextBtn.classList.remove("hide-btn");
-    }
 
     if (movies && movieArray.length === 0) {
       displaySearchMsg(
@@ -48,6 +41,14 @@ export async function fetchMovieData(movies, movieIdArray) {
         "No more results for this movie title...",
         ".movies__wrapper"
       );
+    }
+
+    if (movieArray.length < 10) {
+      nextBtn.classList.add("hide-btn");
+      nextBtn.classList.remove("show-btn");
+    } else {
+      nextBtn.classList.add("show-btn");
+      nextBtn.classList.remove("hide-btn");
     }
   } catch (error) {
     console.error(error);

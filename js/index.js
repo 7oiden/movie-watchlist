@@ -12,9 +12,16 @@ displaySearchMsg(
 );
 
 let searchValue = "";
+let pageNum = 1;
 
 function submitSearch(event) {
   event.preventDefault();
+  pageNum = 1;
+  
+  prevBtn.classList.add("hide-btn");
+  nextBtn.classList.add("hide-btn");
+  prevBtn.classList.remove("show-btn");
+  prevBtn.classList.remove("show-btn");
 
   searchValue = searchInput.value.trim().toLowerCase();
 
@@ -33,8 +40,6 @@ function submitSearch(event) {
 searchForm.addEventListener("submit", submitSearch);
 
 //pagination
-let pageNum = 1;
-
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 
