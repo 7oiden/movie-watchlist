@@ -137,6 +137,11 @@ nav {
   }
 }
 
+main {
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
 .search__form {
   width: 90%;
   position: absolute;
@@ -191,12 +196,42 @@ nav {
   font-size: 1.25rem;
 }
 
+.clear-btn-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .clear-btn-wrapper {
+    width: 85%;
+  }
+}
+@media (min-width: 992px) {
+  .clear-btn-wrapper {
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  .clear-btn-wrapper {
+    width: 65%;
+  }
+}
+@media (min-width: 1400px) {
+  .clear-btn-wrapper {
+    width: 55%;
+  }
+}
+@media (min-width: 1600px) {
+  .clear-btn-wrapper {
+    width: 45%;
+  }
+}
+
 .movies__wrapper {
   width: 90%;
   display: grid;
   margin: 0 auto;
-  padding-top: 6rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
   grid-template-rows: auto;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -317,6 +352,45 @@ a {
 #year-text {
   font-size: 1rem;
   color: #a5a5a5;
+}
+
+button[disabled] {
+  opacity: 0.5;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  display: none;
+}
+
+.page-btn {
+  background-color: #2e2e2f;
+  border: none;
+  border-radius: 3px;
+  color: #a5a5a5;
+  padding: 0.5rem 1rem;
+  font-family: "inter", sans-serif;
+  cursor: pointer;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-btn-show {
+  display: flex;
+}
+
+.hide-btn {
+  visibility: hidden;
+}
+
+.show-btn {
+  visibility: visible;
 }
 
 .fa-search {

@@ -4,14 +4,20 @@ import { displaySpinner } from "./displaySpinner.js";
 import { handleSearchError } from "./handleSearchError.js";
 
 const searchForm = document.querySelector(".search__form");
+const btnContainer = document.querySelector(".btn-wrapper");
 
 // let movieIdArray = [];
 
-export async function fetchMovieId(searchValue) {
+export async function fetchAndUpdate(searchValue, pageNum) {
+  await fetchMovieId(searchValue, pageNum);
+}
+
+export async function fetchMovieId(searchValue, pageNum) {
   const searchQuery = `s=${searchValue}&type=movie&plot=short`;
+  const pageQuery = `&page=${pageNum}`;
 
   try {
-    const response = await fetch(baseUrl + searchQuery);
+    const response = await fetch(baseUrl + searchQuery + pageQuery);
 
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
@@ -22,6 +28,7 @@ export async function fetchMovieId(searchValue) {
     let movieIdArray = [];
 
     displaySpinner(".movies__wrapper");
+    btnContainer.classList.remove("page-btn-show");
     const movies = result.Search;
 
     searchForm.reset();
@@ -33,7 +40,9 @@ export async function fetchMovieId(searchValue) {
         movieIdArray.push(movie.imdbID);
       });
     }
-    fetchMovieData(movieIdArray);
+
+
+    fetchMovieData(movies, movieIdArray);
   } catch (error) {
     console.error(error);
     handleSearchError(error);

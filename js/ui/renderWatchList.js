@@ -2,9 +2,11 @@ import { getExistingFavs, saveFavs } from "../utils/storage.js";
 
 let currentWatchList = getExistingFavs();
 const moviesContainer = document.querySelector(".movies__wrapper");
+const clearButton = document.querySelector(".clear-btn");
 
 export function renderWatchList() {
   if (currentWatchList.length === 0) {
+    clearButton.classList.add("hide-btn");
     moviesContainer.innerHTML = `
     <div class="search__msg-container">
     <p class="search__msg failed-msg">Your watchlist is looking a little empty...</p>
